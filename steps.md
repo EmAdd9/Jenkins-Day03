@@ -1,5 +1,6 @@
 # Ways To Install Jenkins on Windows & Linux
 ## --- INSTALL JENKINS ON LINUX METHOD -1 ---
+
 sudo apt update -y
 sudo apt install openjdk-11-jre -y
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key |sudo tee \
@@ -12,12 +13,16 @@ sudo apt-get install jenkins -y
 sudo systemctl enablejenkins
 sudo systemctl start jenkins
 sudo systemctl status jenkins
+
 ## --- INSTALL JENKINS ON LINUX METHOD -2 ---
+
 sudo apt update -y
 sudo apt install openjdk-11-jre -y
 sudo wget https://updates.jenkins.io/download/war/2.387.3/jenkins.war
 java -jar Jenkins.war  --httpPort=8082
+
 ## --- INSTALL JENKINS ON WINDOWS ---
+
 Follow these step-by-step instructions to install Jenkins on your Windows machine:
 	1. Visit the official Jenkins website at  https://www.jenkins.io/ and go to the "Download" section.
 	2. Click on the "Windows" tab and download the latest stable release of Jenkins for Windows as a "Generic Java package (.war)" file.
@@ -33,4 +38,3 @@ Follow these step-by-step instructions to install Jenkins on your Windows machin
 	12. Wait for the plugin installation to complete. Once done, you'll be prompted to create an admin user. Fill in the required details and click "Save and Continue".
 	13. Finally, you'll see the Jenkins dashboard, where you can start setting up your projects and automation workflows.
 That's it! You have successfully installed Jenkins on your Windows machine. Feel free to explore the various features and capabilities offered by Jenkins for continuous integration and delivery.
-![image](https://github.com/EmAdd9/Jenkins-Day03/assets/91713238/1f84f3ce-3934-471b-9f53-2373f3f6408e)
