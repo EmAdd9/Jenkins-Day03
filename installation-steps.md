@@ -1,25 +1,74 @@
 # Ways To Install Jenkins on Windows & Linux
 ## --- INSTALL JENKINS ON LINUX METHOD -1 ---
 
-sudo apt update -y
-sudo apt install openjdk-11-jre -y
-curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key |sudo tee \
-  /usr/share/keyrings/jenkins-keyring.asc >/dev/null
-echodeb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
-  https://pkg.jenkins.io/debian-stable binary/ |sudo tee \
-  /etc/apt/sources.list.d/jenkins.list >/dev/null
-sudo apt-get update -y 
-sudo apt-get install jenkins -y
-sudo systemctl enablejenkins
-sudo systemctl start jenkins
-sudo systemctl status jenkins
+1. Update the package index:
+   ```bash
+   sudo apt update -y
+   ```
+
+2. Install OpenJDK 11:
+   ```bash
+   sudo apt install openjdk-11-jre -y
+   ```
+
+3. Add Jenkins repository key:
+   ```bash
+   curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc >/dev/null
+   ```
+
+4. Add Jenkins repository to sources:
+   ```bash
+   echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list >/dev/null
+   ```
+
+5. Update the package index again:
+   ```bash
+   sudo apt-get update -y
+   ```
+
+6. Install Jenkins:
+   ```bash
+   sudo apt-get install jenkins -y
+   ```
+
+7. Enable and start Jenkins service:
+   ```bash
+   sudo systemctl enable jenkins
+   sudo systemctl start jenkins
+   ```
+
+8. Check the status of Jenkins:
+   ```bash
+   sudo systemctl status jenkins
+   ```
+
+You've successfully installed Jenkins on your Ubuntu machine. Use the provided commands to set up Jenkins for your continuous integration and automation needs.
+```
 
 ## --- INSTALL JENKINS ON LINUX METHOD -2 ---
 
-sudo apt update -y
-sudo apt install openjdk-11-jre -y
-sudo wget https://updates.jenkins.io/download/war/2.387.3/jenkins.war
-java -jar Jenkins.war  --httpPort=8082
+1. Update the package index:
+   ```bash
+   sudo apt update -y
+   ```
+
+2. Install OpenJDK 11:
+   ```bash
+   sudo apt install openjdk-11-jre -y
+   ```
+
+3. Download the Jenkins WAR file:
+   ```bash
+   sudo wget https://updates.jenkins.io/download/war/2.387.3/jenkins.war
+   ```
+
+4. Start Jenkins with a specific port (e.g., 8082):
+   ```bash
+   java -jar jenkins.war --httpPort=8082
+   ```
+
+Once Jenkins is running, you can access the Jenkins web interface by opening a web browser and navigating to `http://your_server_ip:8082`.
+
 
 ## --- INSTALL JENKINS ON WINDOWS ---
 
